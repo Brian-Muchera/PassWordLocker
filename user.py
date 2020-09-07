@@ -1,19 +1,19 @@
 class User:
 
     """
-    Create User class that gnerates new instances for user.
+    Create User class that gnerates new instances for uer.
     """
 
     user_list = []
 
     def __init__(self, username, password):
         """
-        Method that defines the properties of a user
+        Method taht defines the properties of a user
         """
         self.username = username
         self.password = password
 
-     def save_user(self):
+    def save_user(self):
         """
         Method to save a new user into the user list
         """
@@ -26,10 +26,8 @@ class User:
         """
         return cls.user_list
 
-
     def delete_user(self):
         """
         Method to delete a saved account
         """
         User.user_list.remove(self)
-    

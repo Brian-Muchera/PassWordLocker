@@ -1,7 +1,6 @@
 # Password Locker
 
-Password locker is an aplication that allows a user to manage their password. The application runs on the python terminal. The user can create an
-account and store their credentials. The user also has a choice to automatically generate a  password.
+Password Locker is an aplication that allows a user to manage their password. The application runs on the python terminal. The user can create an account and store their credentials. The user also has a choice to automatically generate a password.
 
 **BDD**
 The application allows the user to create an account

@@ -26,13 +26,13 @@ def display_user():
 
 def login_user(username, password):
     """
-    Check if user exist and login the user
+    Check if uesr exist and login the user
     """
     check_user = Credentials.verify_user(username, password)
     return check_user
 
 
-    def create_new_credential(account, userName, password):
+def create_new_credential(account, userName, password):
     """
     Create new user credentials for a user
     """
@@ -74,6 +74,7 @@ def check_credentials(account):
     """
     return Credentials.existing_credential(account)
 
+
 def generate_Password():
     '''
     generates a random password for the user.
@@ -89,8 +90,9 @@ def copy_password(account):
     """
     return Credentials.copy_password(account)
 
-    def main():
-    print("Welcome to the PassWordLocker...\n Please the code to navigate through the application.\n NA ---  New Account  \n EA ---  Existing Account  \n")
+
+def main():
+    print("Welcome to the PassLocker...\n Please the code to navigate through the application.\n NA ---  New Account  \n EA ---  Existing Account  \n")
     nav_code = input("").lower().strip()
     if nav_code == "na":
         print("Sign Up")
@@ -106,13 +108,13 @@ def copy_password(account):
                 password = generate_Password()
                 break
             else:
-                print("Incorrect password please try again!!!")
+                print("Invalid password please try again")
         save_user(create_new_user(username, password))
         print("*"*85)
         print(
             f"Hello {username}, Account created succesfully! Your password is: {password}")
         print("*"*85)
-         elif nav_code == "ea":
+    elif nav_code == "ea":
         print("*"*50)
         print("Enter your User name and your Password to log in:")
         print('*' * 50)
@@ -120,7 +122,7 @@ def copy_password(account):
         password = input("password: ")
         login = login_user(username, password)
         if login_user == login:
-            print(f"Hello {username}.Welcome To PassWordLocker")
+            print(f"Hello {username}.Welcome To PassLocker")
             print('\n')
     while True:
         print("Use these short codes:\n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n")
@@ -139,7 +141,7 @@ def copy_password(account):
                 if password_Choice == 'tp':
                     password = input("Enter Your Own Password\n")
                     break
-                  elif password_Choice == 'gp':
+                elif password_Choice == 'gp':
                     password = generate_Password()
                     break
                 else:
@@ -184,7 +186,7 @@ def copy_password(account):
                 print("_"*50)
                 find_credential.delete_credentials()
                 print('\n')
-                print(  
+                print(
                     f"Your stored credentials for : {find_credential.account} successfully deleted!!!")
                 print('\n')
             else:
@@ -195,17 +197,16 @@ def copy_password(account):
 
             password = generate_Password()
             print(
-                f" {password} Has been generated succesfully. You can proceed to use it to your account")
+                f" {password} Has been generated succesfull. You can proceed to use it to your account")
         elif nav_code == 'ex':
-            print("Thanks for using this PassWordLocker..Welcome once more!!")
+            print("Thanks for using passwords store manager.. See you next time!")
             break
         else:
             print(
-                "Wrong entry... Check your entry and let it match those in the menu")
+                "Wrong entry... Check your entry again and let it match those in the menu")
     else:
-        print("Please enter a valid credential to continue")
+        print("Please enter a valid input to continue")
 
 
 if __name__ == '__main__':
     main()
-  

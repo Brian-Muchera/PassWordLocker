@@ -28,7 +28,7 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.save_details()
         self.assertEqual(len(Credentials.credentials_list), 1)
 
-         def tearDown(self):
+    def tearDown(self):
         """
         Clean up after each test case
         """
@@ -53,7 +53,7 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list), 1)
 
- def test_search_credential(self):
+    def test_search_credential(self):
         """
         Check if credentials can be found by account name
         """
@@ -68,7 +68,7 @@ class TestCredentials(unittest.TestCase):
         check if we can return a true or false based on whether we find or can't find the credential.
         """
         self.new_credential.save_details()
-        the_credential = Credentials("Twitter", "ericopeter", "Mfh45hfk")
+        the_credential = Credentials("Twitter", "mikeycharles", "Mfh45hfk")
         the_credential.save_details()
         credential_is_found = Credentials.existing_credential("Twitter")
         self.assertTrue(credential_is_found)
@@ -84,4 +84,3 @@ class TestCredentials(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -19,7 +19,7 @@ class Credentials():
         self.userName = userName
         self.password = password
 
-       @classmethod
+    @classmethod
     def verify_user(cls, username, password):
         """
         Method to verify if in the user_list
@@ -42,7 +42,7 @@ class Credentials():
         """
         Credentials.credentials_list.remove(self)
 
-@classmethod
+    @classmethod
     def search_credential(cls, account):
         """
         Checks if account.name and return credentials matching the account
@@ -61,7 +61,7 @@ class Credentials():
                 return True
         return False
 
- @classmethod
+    @classmethod
     def display_credentials(cls):
         """
         Method that returns all items in the credentials list
@@ -76,10 +76,9 @@ class Credentials():
         logged_credential = Credentials.search_credential(account)
         pyperclip.copy(logged_credential.password)
 
-      def generatePassword(stringLength=8):
+    def generatePassword(stringLength=8):
         """
         Generate random password with letters and numbers
         """
         password = string.ascii_letters+string.digits
         return ''.join(random.choice(password)for i in range(stringLength))
-  
