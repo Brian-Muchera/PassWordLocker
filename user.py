@@ -8,7 +8,7 @@ class User:
 
     def __init__(self, username, password):
         """
-        Method taht defines the properties of a user
+        Method that defines the properties of a user
         """
         self.username = username
         self.password = password
