@@ -53,3 +53,35 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list), 1)
 
+ def test_search_credential(self):
+        """
+        Check if credentials can be found by account name
+        """
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter", "Brian-Muchera", "asdfg")
+        test_credential.save_details()
+        the_credential = Credentials.search_credential("Twitter")
+        self.assertEqual(the_credential.account, test_credential.account)
+
+    def test_credential_exist(self):
+        """
+        check if we can return a true or false based on whether we find or can't find the credential.
+        """
+        self.new_credential.save_details()
+        the_credential = Credentials("Twitter", "mikeycharles", "Mfh45hfk")
+        the_credential.save_details()
+        credential_is_found = Credentials.existing_credential("Twitter")
+        self.assertTrue(credential_is_found)
+
+    def test_display_all_saved_credentials(self):
+        '''
+        displays all the credentials that has been saved by the user
+        '''
+
+        self.assertEqual(Credentials.display_credentials(),
+                         Credentials.credentials_list)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
