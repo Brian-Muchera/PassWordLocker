@@ -88,3 +88,27 @@ def copy_password(account):
     We import the framework then declare a function that copies the emails.
     """
     return Credentials.copy_password(account)
+
+    def main():
+    print("Welcome to the PassWordLocker...\n Please the code to navigate through the application.\n NA ---  New Account  \n EA ---  Existing Account  \n")
+    nav_code = input("").lower().strip()
+    if nav_code == "na":
+        print("Sign Up")
+        print('*' * 50)
+        username = input("User_name: ")
+        while True:
+            print(" TP - Type pasword:\n GP - Generate random Password")
+            password_Choice = input().lower().strip()
+            if password_Choice == 'tp':
+                password = input("Enter Password\n")
+                break
+            elif password_Choice == 'gp':
+                password = generate_Password()
+                break
+            else:
+                print("Incorrect password please try again!!!")
+        save_user(create_new_user(username, password))
+        print("*"*85)
+        print(
+            f"Hello {username}, Account created succesfully! Your password is: {password}")
+        print("*"*85)
