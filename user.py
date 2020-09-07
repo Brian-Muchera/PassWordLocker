@@ -19,4 +19,9 @@ class User:
         """
         User.user_list.append(self)
 
-   
+    @classmethod
+    def display_user(cls):
+        """
+        Method that returns the userlist
+        """
+        return cls.user_list
