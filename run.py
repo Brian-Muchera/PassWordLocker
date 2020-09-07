@@ -174,7 +174,7 @@ def copy_password(account):
                     f"User Name: {find_credential.userName} Password :{find_credential.password}")
                 print('-' * 50)
             else:
-                print("That Credential do not exist")
+                print("That Credential does not exist")
                 print('\n')
         elif nav_code == "d":
             print("Enter the account name of the Credentials you want to delete")
@@ -195,7 +195,7 @@ def copy_password(account):
 
             password = generate_Password()
             print(
-                f" {password} Has been generated succesfull. You can proceed to use it to your account")
+                f" {password} Has been generated succesfully. You can proceed to use it to your account")
         elif nav_code == 'ex':
             print("Thanks for using this PassWordLocker..Welcome once more!!")
             break
