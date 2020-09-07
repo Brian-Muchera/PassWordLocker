@@ -68,7 +68,7 @@ class TestCredentials(unittest.TestCase):
         check if we can return a true or false based on whether we find or can't find the credential.
         """
         self.new_credential.save_details()
-        the_credential = Credentials("Twitter", "mikeycharles", "Mfh45hfk")
+        the_credential = Credentials("Twitter", "ericopeter", "Mfh45hfk")
         the_credential.save_details()
         credential_is_found = Credentials.existing_credential("Twitter")
         self.assertTrue(credential_is_found)
