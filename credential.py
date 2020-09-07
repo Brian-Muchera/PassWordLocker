@@ -75,3 +75,11 @@ class Credentials():
         """
         logged_credential = Credentials.search_credential(account)
         pyperclip.copy(logged_credential.password)
+
+      def generatePassword(stringLength=8):
+        """
+        Generate random password with letters and numbers
+        """
+        password = string.ascii_letters+string.digits
+        return ''.join(random.choice(password)for i in range(stringLength))
+  
