@@ -1,7 +1,7 @@
 class User:
 
     """
-    Create User class that gnerates new instances for uer.
+    Create User class that gnerates new instances for user.
     """
 
     user_list = []
