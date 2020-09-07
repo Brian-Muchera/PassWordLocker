@@ -184,4 +184,28 @@ def copy_password(account):
                 print("_"*50)
                 find_credential.delete_credentials()
                 print('\n')
-                print(   
+                print(  
+                    f"Your stored credentials for : {find_credential.account} successfully deleted!!!")
+                print('\n')
+            else:
+                print(
+                    "Credential to be deleted does not exist")
+
+        elif nav_code == 'gp':
+
+            password = generate_Password()
+            print(
+                f" {password} Has been generated succesfull. You can proceed to use it to your account")
+        elif nav_code == 'ex':
+            print("Thanks for using this PassWordLocker..Welcome once more!!")
+            break
+        else:
+            print(
+                "Wrong entry... Check your entry and let it match those in the menu")
+    else:
+        print("Please enter a valid credential to continue")
+
+
+if __name__ == '__main__':
+    main()
+  
